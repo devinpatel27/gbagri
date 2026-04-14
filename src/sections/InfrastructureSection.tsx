@@ -10,25 +10,25 @@ const facilities = [
         title: 'Modern Sorting Units',
         description: 'Buhler Sortex technology ensuring 99.9% purity in every grain.',
         icon: Zap,
-        image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
+        image: '/Prodcuts/backgrounf.webp',
     },
     {
         title: 'Advanced Lab',
         description: 'In-house facility for moisture, size, and aflatoxin analysis.',
         icon: Microscope,
-        image: '/prodcuts/lab.webp',
+        image: '/Prodcuts/lab.webp',
     },
     {
         title: 'Large-scale Storage',
         description: 'Climate-controlled warehouses maintaining freshness year-round.',
         icon: Warehouse,
-        image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800',
+        image: '/Prodcuts/prodcut-main2.webp',
     },
     {
         title: 'Automated Packing',
         description: 'Hygienic, touch-free packaging for export-grade safety.',
         icon: Boxes,
-        image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800',
+        image: '/Prodcuts/product-main.webp',
     },
 ];
 
