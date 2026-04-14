@@ -11,7 +11,7 @@ const leaders = [
         initials: 'NG',
         phone: '+91 85302 23280',
         quote: 'Our mission is to bring the finest of Indian agriculture to global tables — with integrity, precision, and an unwavering commitment to quality.',
-    },
+    }
 ];
 
 export default function TeamSection() {
@@ -36,7 +36,7 @@ export default function TeamSection() {
                     </h2>
                 </FadeIn>
 
-                <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div className="  gap-6 max-w-5xl mx-auto">
                     {leaders.map((leader, i) => (
                         <FadeIn key={leader.name} direction="up" delay={i * 0.15} className="h-full">
                             <motion.div
