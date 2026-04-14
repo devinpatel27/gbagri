@@ -13,8 +13,8 @@ const contactItems = [
     {
         icon: Phone,
         label: 'Call Us',
-        value: '+91 98250 18910\n+91 80000 39244',
-        href: 'tel:+919825018910',
+        value: '+91 85302 23280',
+        href: 'tel:+918530223280',
     },
     {
         icon: MapPin,

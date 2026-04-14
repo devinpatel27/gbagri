@@ -130,7 +130,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                     Get a Quote
                                 </Link>
                                 <a
-                                    href="tel:+919825018910"
+                                    href="tel:+918530223280"
                                     className="btn-outline w-full sm:w-auto text-center flex items-center justify-center gap-2"
                                 >
                                     Call Now

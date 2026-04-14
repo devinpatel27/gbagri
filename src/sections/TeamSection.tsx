@@ -6,18 +6,11 @@ import { Phone, Quote } from 'lucide-react';
 
 const leaders = [
     {
-        name: 'Ajay Bhuva',
+        name: 'Nirav Ghiniya',
         role: 'Director',
-        initials: 'AB',
-        phone: '+91 98250 18910',
+        initials: 'NG',
+        phone: '+91 85302 23280',
         quote: 'Our mission is to bring the finest of Indian agriculture to global tables — with integrity, precision, and an unwavering commitment to quality.',
-    },
-    {
-        name: 'Miraj Khunt',
-        role: 'Director',
-        initials: 'MK',
-        phone: '+91 80000 39244',
-        quote: 'We don\'t just export commodities; we build long-term partnerships rooted in transparency and world-class service.',
     },
 ];
 
