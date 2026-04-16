@@ -24,7 +24,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className="scroll-smooth">
+        <html lang="en" className="scroll-smooth" suppressHydrationWarning>
             <head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -37,9 +37,9 @@ export default function RootLayout({
             <body className="bg-background text-white antialiased selection:bg-gold/30 selection:text-white flex flex-col min-h-screen">
                 <SmoothScroll>
                     <Navbar />
-                    <div className="flex-grow pt-[88px] relative overflow-x-hidden">
+                    <main className="flex-grow relative overflow-x-hidden">
                         {children}
-                    </div>
+                    </main>
                     <Footer />
                 </SmoothScroll>
             </body>

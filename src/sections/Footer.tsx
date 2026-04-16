@@ -97,16 +97,18 @@ export default function Footer() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Phone className="w-4 h-4 text-gold/60 mt-0.5 shrink-0" />
-                                <div className="text-sm">
+                                <div className="text-sm space-y-2">
                                     <a href="tel:+918530223280" className="text-gray-400 hover:text-gold transition-colors block">
-                                        Nirav: +91 85302 23280
+                                        Nirav Giniya: +91 85302 23280
+                                    </a>
+                                    <a href="tel:+918000039244" className="text-gray-400 hover:text-gold transition-colors block border-t border-border/20 pt-1 mt-1">
+                                        Miraj Khunt: +91 80000 39244
                                     </a>
                                 </div>
                             </li>
                             <li className="flex items-start gap-3 group">
                                 <MapPin className="w-4 h-4 text-gold/60 mt-0.5 shrink-0 group-hover:text-gold transition-colors" />
                                 <span className="text-gray-400 text-sm leading-relaxed">
-                                    Survey No 91, P1/p1, Plot No. 2,<br />
                                     Opp. Navi Sankli Gate, Junagadh Road,<br />
                                     Navi Sankli, Jetpur, Rajkot,<br />
                                     Gujarat – 360360
@@ -122,7 +124,7 @@ export default function Footer() {
                 {/* Bottom */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-muted/50 text-xs text-center md:text-left">
-                        &copy; {new Date().getFullYear()} GB Agri Impex Limited. All rights reserved.
+                        &copy; {new Date().getFullYear()} GBAgri From Farms. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-xs text-muted/50">
                         <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>

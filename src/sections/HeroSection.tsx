@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowDown, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const words = ['Peanuts', 'Sesame Seeds', 'Cumin Seeds', 'Fennel Seeds', 'Black Gram', 'Spices'];
@@ -44,13 +45,24 @@ export default function HeroSection() {
         <section
             id="home"
             className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-            style={{
-                background:
-                    'radial-gradient(ellipse 90% 70% at 50% -10%, rgba(211,167,44,0.13) 0%, transparent 65%), radial-gradient(ellipse 50% 50% at 80% 85%, rgba(211,167,44,0.07) 0%, transparent 60%), #21231F',
-            }}
         >
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/hero-background.webp"
+                    alt="Agricultural Background"
+                    fill
+                    priority
+                    quality={90}
+                    className="object-cover object-center sm:rounded-none rounded-b-[2.5rem]"
+                />
+                {/* Darker overlay for better text readability */}
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-background" />
+            </div>
+
             {/* Decorative elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
                 {/* Grid pattern */}
                 <div
                     className="absolute inset-0 opacity-[0.025]"
@@ -95,7 +107,7 @@ export default function HeroSection() {
             </div>
 
             {/* Main Content */}
-            <div className="relative z-10 text-center px-6 md:px-10 max-w-6xl mx-auto pt-24 pb-16">
+            <div className="relative z-20 text-center px-6 md:px-10 max-w-6xl mx-auto pt-24 pb-16">
                 {/* Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
@@ -114,10 +126,10 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 35 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.85, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.04] mb-7"
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.04] mb-7 text-white"
                     style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
                 >
-                    <span className="text-white">Premium Quality</span>
+                    Premium Quality
                     <br />
                     <span className="text-gold-gradient">Agricultural Exports</span>
                 </motion.h1>
@@ -129,19 +141,19 @@ export default function HeroSection() {
                     transition={{ duration: 0.65, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
                     className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xl sm:text-2xl md:text-3xl font-medium text-muted mb-7"
                 >
-                    <span>Supplying</span>
+                    <span className="text-white/80">Supplying</span>
                     <span className="text-white text-left font-semibold inline-flex items-center">
                         {displayed}
                         <span className="inline-block w-0.5 h-6 sm:h-7 bg-gold ml-1 animate-pulse" />
                     </span>
-                    <span>to the World</span>
+                    <span className="text-white/80">to the World</span>
                 </motion.div>
 
                 <motion.p
                     initial={{ opacity: 0, y: 22 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.65, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-muted text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+                    className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
                 >
                     From the fertile fields of India to global markets — delivering exceptional quality,
                     strict certifications, and reliable bulk supply.
@@ -182,7 +194,7 @@ export default function HeroSection() {
                         <motion.div
                             key={stat.label}
                             whileHover={{ y: -5, scale: 1.03, transition: { duration: 0.25 } }}
-                            className="glass-card rounded-2xl px-4 py-5 text-center border border-border/50 hover:border-gold/30 hover:shadow-[0_0_25px_rgba(211,167,44,0.12)] transition-all duration-400 cursor-default"
+                            className="glass-card rounded-2xl px-4 py-5 text-center border border-white/10 bg-white/5 backdrop-blur-md hover:border-gold/30 hover:shadow-[0_0_25px_rgba(211,167,44,0.12)] transition-all duration-400 cursor-default"
                         >
                             <div
                                 className="text-3xl font-bold text-gold mb-1"
@@ -190,7 +202,7 @@ export default function HeroSection() {
                             >
                                 {stat.value}
                             </div>
-                            <div className="text-muted text-[11px] font-semibold tracking-wide">{stat.label}</div>
+                            <div className="text-white/60 text-[11px] font-semibold tracking-wide uppercase">{stat.label}</div>
                         </motion.div>
                     ))}
                 </motion.div>
@@ -202,7 +214,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.2 }}
                 onClick={scrollToAbout}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted hover:text-gold transition-colors duration-300 group"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 hover:text-gold transition-colors duration-300 group z-20"
             >
                 <span className="text-[10px] tracking-[0.25em] uppercase font-semibold">Scroll</span>
                 <motion.div

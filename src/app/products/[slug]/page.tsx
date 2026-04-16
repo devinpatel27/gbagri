@@ -1,35 +1,50 @@
-import { getProductBySlug, getRelatedProducts, products } from '@/data/products';
-import { Check, ChevronRight } from 'lucide-react';
+'use client';
+
+import { getProductBySlug, getRelatedProducts } from '@/data/products';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowRight, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 
-// Generate static params for all products to pre-render at build time
-export function generateStaticParams() {
-    return products.map((product) => ({
-        slug: product.slug,
-    }));
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = await params;
+export default function ProductDetailPage() {
+    const params = useParams();
+    const slug = typeof params?.slug === 'string' ? params.slug : '';
     const product = getProductBySlug(slug);
-    if (!product) return {};
-    return {
-        title: `${product.name} | GB Agri From Farms`,
-        description: product.shortDesc,
-    };
-}
 
-export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = await params;
-    const product = getProductBySlug(slug);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [sliderWidth, setSliderWidth] = useState(0);
+    const sliderRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (sliderRef.current) {
+            setSliderWidth(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth);
+        }
+    }, [product]);
 
     if (!product) {
         notFound();
     }
 
     const relatedProducts = getRelatedProducts(slug, 3);
+
+    const handleNext = () => {
+        setActiveIndex((prev) => (prev + 1) % product.gallery.length);
+    };
+
+    const handlePrev = () => {
+        setActiveIndex((prev) => (prev - 1 + product.gallery.length) % product.gallery.length);
+    };
+
+    const handleDragEnd = (event: any, info: any) => {
+        const swipeThreshold = 50;
+        if (info.offset.x < -swipeThreshold) {
+            handleNext();
+        } else if (info.offset.x > swipeThreshold) {
+            handlePrev();
+        }
+    };
 
     return (
         <main className="min-h-screen bg-background">
@@ -45,18 +60,51 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                     </nav>
 
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
-                        {/* Left: Image Gallery */}
-                        <div className="space-y-4">
-                            <div className="relative aspect-square sm:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden glass-card border border-border/30">
-                                <Image
-                                    src={product.image}
-                                    alt={product.name}
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 1024px) 100vw, 50vw"
-                                    priority
-                                />
-                                <div className="absolute top-6 left-6 flex flex-wrap gap-2">
+                        {/* Left: Image Gallery with Draggable Main Image */}
+                        <div className="space-y-6">
+                            <div className="relative aspect-video rounded-3xl overflow-hidden glass-card border border-border/30 group cursor-grab active:cursor-grabbing">
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={activeIndex}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: -20 }}
+                                        transition={{ duration: 0.4, ease: "easeOut" }}
+                                        drag="x"
+                                        dragConstraints={{ left: 0, right: 0 }}
+                                        onDragEnd={handleDragEnd}
+                                        className="absolute inset-0 z-0"
+                                    >
+                                        <Image
+                                            src={product.gallery[activeIndex]}
+                                            alt={product.name}
+                                            fill
+                                            className="object-cover pointer-events-none"
+                                            sizes="(max-width: 1024px) 100vw, 50vw"
+                                            priority
+                                        />
+                                    </motion.div>
+                                </AnimatePresence>
+
+                                {/* Arrow controls - Desktop only */}
+                                {product.gallery.length > 1 && (
+                                    <>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+                                            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold hover:text-black z-20"
+                                        >
+                                            <ChevronLeft className="w-5 h-5" />
+                                        </button>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                                            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold hover:text-black z-20"
+                                        >
+                                            <ChevronRight className="w-5 h-5" />
+                                        </button>
+                                    </>
+                                )}
+
+                                <div className="absolute top-6 left-6 flex flex-wrap gap-2 z-10">
                                     {product.tags.map(tag => (
                                         <span key={tag} className="px-3 py-1 rounded-full bg-background/80 backdrop-blur-md border border-gold/30 text-gold text-xs font-bold tracking-wider">
                                             {tag}
@@ -64,21 +112,32 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                     ))}
                                 </div>
                             </div>
-                            {/* Thumbnails (If gallery has more than 1 image) */}
+
+                            {/* Thumbnails */}
                             {product.gallery.length > 1 && (
-                                <div className="grid grid-cols-4 gap-4">
-                                    {product.gallery.map((img, idx) => (
-                                        <div key={idx} className="relative aspect-square rounded-xl overflow-hidden glass-premium border border-transparent hover:border-gold cursor-pointer transition-all">
-                                            <Image src={img} alt={`Gallery ${idx}`} fill className="object-cover" />
-                                        </div>
-                                    ))}
+                                <div className="relative overflow-hidden">
+                                    <div
+                                        ref={sliderRef}
+                                        className="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth pb-2"
+                                    >
+                                        {product.gallery.map((img, idx) => (
+                                            <div
+                                                key={idx}
+                                                onClick={() => setActiveIndex(idx)}
+                                                className={`relative flex-shrink-0 w-32 aspect-video rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${idx === activeIndex ? 'border-gold' : 'border-transparent opacity-60 hover:opacity-100'
+                                                    }`}
+                                            >
+                                                <Image src={img} alt={`Gallery ${idx}`} fill className="object-cover" />
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             )}
                         </div>
 
                         {/* Right: Product Info */}
                         <div className="flex flex-col">
-                            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+                            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
                                 {product.name}
                             </h1>
                             <p className="text-gray-300 text-lg leading-relaxed mb-8">
@@ -122,16 +181,16 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                             </div>
 
                             {/* CTA */}
-                            <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-border/30 mt-auto">
+                            <div className="flex flex-col sm:flex-row gap-4 pt-6 lg:pt-10 border-t border-border/30 mt-auto">
                                 <Link
                                     href="/contact"
-                                    className="btn-primary w-full sm:w-auto text-center"
+                                    className="px-8 py-4 bg-gold text-background font-bold rounded-full hover:bg-gold-light hover:scale-105 transition-all duration-300 text-center flex-1"
                                 >
                                     Get a Quote
                                 </Link>
                                 <a
                                     href="tel:+918530223280"
-                                    className="btn-outline w-full sm:w-auto text-center flex items-center justify-center gap-2"
+                                    className="px-8 py-4 border border-gold/40 text-white font-semibold rounded-full hover:border-gold hover:bg-gold/10 transition-all duration-300 text-center flex-1"
                                 >
                                     Call Now
                                 </a>
@@ -155,12 +214,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {relatedProducts.map(rp => (
-                                <Link key={rp.slug} href={`/products/${rp.slug}`} className="group relative aspect-[4/3] rounded-2xl overflow-hidden glass-card border border-border/30 hover:border-gold/50 transition-all duration-500 block">
-                                    <Image src={rp.image} alt={rp.name} fill className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C17] via-[#1A1C17]/40 to-transparent" />
-                                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                                        <h3 className="text-xl font-bold text-white group-hover:text-gold transition-colors duration-300" style={{ fontFamily: 'Playfair Display, serif' }}>{rp.name}</h3>
-                                        <p className="text-sm text-gray-400 mt-2 line-clamp-2">{rp.shortDesc}</p>
+                                <Link key={rp.slug} href={`/products/${rp.slug}`} className="group block">
+                                    <div className="relative aspect-video rounded-2xl overflow-hidden glass-card border border-border/30 hover:border-gold/50 transition-all duration-500">
+                                        <Image src={rp.image} alt={rp.name} fill className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C17] via-transparent to-transparent opacity-60" />
+
+                                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                                            <h3 className="text-xl font-bold text-white group-hover:text-gold transition-colors duration-300" style={{ fontFamily: 'Playfair Display, serif' }}>{rp.name}</h3>
+                                            <div className="flex items-center gap-2 text-gold text-[10px] font-bold uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+                                                Learn More <ArrowRight className="w-3 h-3" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </Link>
                             ))}

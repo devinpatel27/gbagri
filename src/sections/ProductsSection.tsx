@@ -49,27 +49,25 @@ export default function ProductsSection() {
                             <motion.div
                                 variants={staggerItem}
                                 whileHover={{ y: -4, transition: { duration: 0.3 } }}
-                                className="group relative h-[420px] sm:h-[460px] rounded-2xl overflow-hidden glass-card border border-border/40 hover:border-gold/30 transition-all duration-500"
+                                className="group relative rounded-2xl overflow-hidden glass-card border border-border/40 hover:border-gold/30 transition-all duration-500"
                             >
-                                {/* Image */}
-                                <div className="absolute inset-0">
+                                {/* Image with 16:9 Aspect Ratio */}
+                                <div className="relative aspect-video overflow-hidden">
                                     <Image
                                         src={product.image}
                                         alt={product.name}
                                         fill
-                                        className="object-cover opacity-25 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0"
+                                        className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
                                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     />
                                     {/* Gradient overlays */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C17] via-[#1A1C17]/60 to-transparent" />
-                                    {/* Hover gold tint */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C17] via-transparent to-transparent opacity-60" />
                                 </div>
 
                                 {/* Content */}
-                                <div className="absolute inset-0 p-7 flex flex-col justify-end z-10">
+                                <div className="p-7 flex flex-col items-start">
                                     {/* Tags */}
-                                    <div className="flex flex-wrap gap-2 mb-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                    <div className="flex flex-wrap gap-2 mb-4">
                                         {product.tags.map((tag) => (
                                             <span
                                                 key={tag}
@@ -86,19 +84,19 @@ export default function ProductsSection() {
                                     >
                                         {product.name}
                                     </h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed mb-5 line-clamp-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
+                                    <p className="text-gray-400 text-sm leading-relaxed mb-5 line-clamp-2">
                                         {product.shortDesc}
                                     </p>
 
                                     {/* CTA */}
-                                    <div className="flex items-center gap-2 text-gold text-xs font-semibold uppercase tracking-widest cursor-pointer group/btn">
+                                    <div className="flex items-center gap-2 text-gold text-xs font-semibold uppercase tracking-widest group/btn mt-auto">
                                         View Details
                                         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                                     </div>
                                 </div>
 
                                 {/* Top right corner accent */}
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-gold/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full" />
+                                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full pointer-events-none" />
                             </motion.div>
                         </Link>
                     ))}

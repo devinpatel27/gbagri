@@ -3,11 +3,11 @@ export const products = [
         slug: 'bold-peanuts',
         name: 'Bold Peanuts',
         shortDesc: 'Premium quality bold peanuts sourced from Gujarat, perfect for roasting and snacking.',
-        fullDesc: 'Our Indian Bold Peanuts are recognized for their distinct rich flavor, larger size, and high nutritional profile. Sourced directly from trusted farms in Gujarat, they undergo meticulous processing using Buhler Sortex technology to ensure absolute uniformity and 99.9% purity. Each batch is rigorously tested for aflatoxin to meet strict EU and US standards.',
-        image: '/Prodcuts/product-main.webp',
+        fullDesc: 'Bold peanuts offer a rich source of protein essential for cell repair, along with vitamin B3 and niacin to enhance brain function. They contain resveratrol to boost blood flow to the brain and folic acid to support iron absorption. Manganese aids calcium absorption and regulates blood sugar levels, while polyphenolic antioxidants improve digestive health. Additionally, p-Coumaric acid plays a role in reducing carcinogenic nitrosamines, contributing to stomach cancer prevention.',
+        image: '/Prodcuts/penuat_full.jpg',
         gallery: [
-            '/Prodcuts/product-main.webp',
-            '/Prodcuts/Product-second.webp'
+            '/Prodcuts/penuat_full.jpg',
+            '/Prodcuts/penuat_details.jpg'
         ],
         category: 'Peanuts',
         tags: ['Grade A', 'Aflatoxin Tested'],
@@ -29,11 +29,11 @@ export const products = [
         slug: 'blanched-split-peanuts',
         name: 'Blanched Split Peanuts',
         shortDesc: 'Precisely blanched peanuts with skin removed, ideal for peanut butter and confectioneries.',
-        fullDesc: 'Our Blanched Split Peanuts are processed with utmost care to completely remove the skin and split the kernel without losing natural oils. They are highly sought after by peanut butter manufacturers, bakeries, and culinary industries worldwide due to their clean taste, absence of bitterness (from the skin), and smooth texture.',
-        image: '/Prodcuts/prodcut-main2.webp',
+        fullDesc: 'Blanched peanuts are packed with healthy poly- and monounsaturated fats, beneficial for heart health and reducing stroke risk. They are also rich in vitamin E, thiamin, folate, and minerals like manganese, phosphorus, and magnesium. Biotin in these peanuts helps break down fats and carbohydrates. Blanched peanuts have a mild flavor and smooth texture, perfect for enhancing sauces and marinades, particularly in dishes like chicken.',
+        image: '/Prodcuts/Blanched_Peanuts.jpg',
         gallery: [
-            '/Prodcuts/prodcut-main2.webp',
-            '/Prodcuts/prodcut-second2.webp'
+            '/Prodcuts/Blanched_Peanuts.jpg',
+            '/Prodcuts/Blanched_Peanuts_Full.jpg'
         ],
         category: 'Peanuts',
         tags: ['Uniform Size', 'High Oil Content'],
@@ -53,13 +53,13 @@ export const products = [
     },
     {
         slug: 'cumin-seeds',
-        name: 'Cumin Seeds (Jeera)',
+        name: 'Cumin Seeds',
         shortDesc: 'Aromatic and flavorful cumin seeds (Jeera) meticulously cleaned and sorted.',
-        fullDesc: 'Indian Cumin Seeds (Jeera) are globally renowned for their unmatched aroma, high volatile oil content, and deep flavor profile. We source premium cumin seeds native to Gujarat and Rajasthan, cleaning them flawlessly to ensure zero impurities. Perfect for spice blends, savory dishes, and therapeutic uses.',
-        image: '/Prodcuts/product-main.webp',
+        fullDesc: 'Cumin is a nutrient-rich seed packed with essential vitamins and minerals, including magnesium, iron, calcium, and phosphorous. Just one teaspoon of cumin seeds can meet your daily iron requirement. It is also a source of vitamin E, A, C, K, and B vitamins. With its high nutritional value, cumin supports digestion, boosts immunity, and is a vital ingredient in many cuisines around the world.',
+        image: '/Prodcuts/Cumin_Products_ZoomIn.jpg',
         gallery: [
-            '/Prodcuts/product-main.webp',
-            '/Prodcuts/Product-second.webp'
+            '/Prodcuts/Cumin_Products_ZoomIn.jpg',
+            '/Prodcuts/Cumin_Products_ZoomOut.jpg'
         ],
         category: 'Spices',
         tags: ['Machine Cleaned', 'High Volatile Oil'],
@@ -81,11 +81,11 @@ export const products = [
         slug: 'organic-fennel-seeds',
         name: 'Organic Fennel Seeds',
         shortDesc: 'Sweet, anise-flavored fennel seeds commonly used as mouth fresheners and spice.',
-        fullDesc: 'Fennel seeds from GBAgri are characterized by their pale green color, sweet aroma, and distinct licorice-like flavor. Used extensively as a digestive mouth freshener and as a vital ingredient in various global cuisines, our fennel seeds are sortex cleaned to ensure you receive only the most potent and visually appealing seeds.',
-        image: '/Prodcuts/prodcut-main2.webp',
+        fullDesc: "Fennel, known for its cooling properties, is a unique spice rich in vitamin C, which supports collagen production and skin health. Fennel seeds, commonly called 'Saunf' in India, are an ancient culinary spice with a sweet-bitter taste. This nutrient-packed seed contains anethole, a phytonutrient that helps reduce inflammation and lowers cancer risk, making fennel both a flavorful and health-supporting addition to meals.",
+        image: '/Prodcuts/Organic_Fennel_Seeds_ZoomIn.jpg',
         gallery: [
-            '/Prodcuts/prodcut-main2.webp',
-            '/Prodcuts/prodcut-second2.webp'
+            '/Prodcuts/Organic_Fennel_Seeds_ZoomIn.jpg',
+            '/Prodcuts/Organic_Fennel_Seeds.jpg'
         ],
         category: 'Spices',
         tags: ['Sortex Cleaned', 'Organic'],
@@ -107,11 +107,11 @@ export const products = [
         slug: 'sesame-seeds',
         name: 'Sesame Seeds',
         shortDesc: 'Hulled and natural sesame seeds with high purity and outstanding nutritional value.',
-        fullDesc: 'India is one of the leading exporters of Sesame Seeds, and we pride ourselves on providing the highest quality natural and hulled sesame seeds. Known for their nutty flavor and high crunch, these seeds are essential for baking, confectionaries, and tahini production. Our seeds boast a minimum 99.9% purity.',
-        image: '/Prodcuts/product-main.webp',
+        fullDesc: 'Sesame seeds are a powerhouse of antioxidants and nutrients that support heart health, reduce cholesterol, and provide liver and kidney protection. Their anti-inflammatory and anti-tumor properties offer significant health benefits. A daily intake of ½ to 1 tablespoon of roasted sesame seeds can aid digestion and relieve constipation. Additionally, sesame seeds are a perfect complement to salads and various dishes.',
+        image: '/Prodcuts/Product_Full_Main.jpg',
         gallery: [
-            '/Prodcuts/product-main.webp',
-            '/Prodcuts/Product-second.webp'
+            '/Prodcuts/Product_Full_Main.jpg',
+            '/Prodcuts/Products_ZoomOut_1.jpg'
         ],
         category: 'Oil Seeds',
         tags: ['99.9% Purity', 'Rich in Calcium'],
@@ -131,13 +131,13 @@ export const products = [
     },
     {
         slug: 'black-gram-seeds',
-        name: 'Black Gram Seeds (Urad Dal)',
+        name: 'Black Gram Seeds',
         shortDesc: 'Nutrient-rich whole and split black gram for versatile culinary uses.',
-        fullDesc: 'Black Gram, or Urad Dal, is a primary staple crop exported widely from India. Packed with protein and essential vitamins, our Black Gram is available in whole, split with skin, and skinless varieties. It is extensively used in South Asian cuisines to prepare batters for idli and dosa, and comforting lentil soups.',
-        image: '/Prodcuts/prodcut-main2.webp',
+        fullDesc: 'Chickpeas are nutrient-dense, providing around 20 grams of protein and 5 grams of dietary fiber in a half-cup serving. Black chickpeas are slightly higher in protein, fiber, iron, and antioxidants than their white counterparts, while white chickpeas have fewer calories and carbohydrates. Both varieties offer significant health benefits, making them a versatile ingredient in a balanced diet, especially for those mindful of calorie intake.',
+        image: '/Prodcuts/BlackGram_Product_Zoomin.jpg',
         gallery: [
-            '/Prodcuts/prodcut-main2.webp',
-            '/Prodcuts/prodcut-second2.webp'
+            '/Prodcuts/BlackGram_Product_Zoomin.jpg',
+            '/Prodcuts/BlackGram_Products_ZoomOut.jpg'
         ],
         category: 'Pulses',
         tags: ['High Protein', 'Polished/Unpolished'],

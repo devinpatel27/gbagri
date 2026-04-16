@@ -122,7 +122,7 @@ export default function AboutSection() {
                                 <span className="text-gold-gradient">Farms to the World</span>
                             </h2>
                             <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                                GBAgri From Farms is a premium agricultural export company based in Gujarat, India.
+                                GB Agri Impex Limited is a premium agricultural export company based in Gujarat, India.
                                 We specialize in sourcing, processing, and exporting high-quality agri-commodities
                                 to global markets with uncompromising standards.
                             </p>

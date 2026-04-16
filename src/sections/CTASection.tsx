@@ -13,13 +13,13 @@ const contactItems = [
     {
         icon: Phone,
         label: 'Call Us',
-        value: '+91 85302 23280',
+        value: 'Nirav Giniya: +91 85302 23280\nMiraj Khunt: +91 80000 39244',
         href: 'tel:+918530223280',
     },
     {
         icon: MapPin,
         label: 'Our Office',
-        value: 'Survey No 91, P1/p1, Plot No. 2,\nOpp. Navi Sankli Gate, Junagadh Road,\nNavi Sankli, Jetpur, Rajkot, Gujarat 360360',
+        value: 'Opp. Navi Sankli Gate, Junagadh Road,\nNavi Sankli, Jetpur, Rajkot, Gujarat 360360',
         href: 'https://maps.google.com',
     },
 ];
@@ -58,6 +58,19 @@ export default function CTASection() {
                         <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-10">
                             Get in touch with us for the latest FOB/CIF prices, product specifications, and shipping details. We reply within 24 hours.
                         </p>
+
+                        {/* Map Integration */}
+                        <div className="mb-12 rounded-2xl overflow-hidden border border-border/40 h-[300px] relative">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14781.93315264878!2d70.62770515!3d21.7518428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39581765c9b74071%3A0x892e2b3c4d5e6f7a!2sNavi%20Sankli%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1713291234567!5m2!1sen!2sin"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
 
                         {/* Email form */}
                         <form className="max-w-xl mx-auto flex flex-col sm:flex-row gap-3 mb-14" onSubmit={(e) => e.preventDefault()}>
