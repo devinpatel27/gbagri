@@ -18,8 +18,8 @@ export default function AboutPage() {
                 backgroundImage="https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg?auto=compress&cs=tinysrgb&w=2000"
             />
             <AboutSection />
-            <ProcessSection />
             <InfrastructureSection />
+            <ProcessSection />
             <TeamSection />
         </main>
     );

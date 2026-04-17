@@ -126,7 +126,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 35 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.85, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.04] mb-7 text-white"
+                    className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold leading-[1.04] mb-7 text-white"
                     style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
                 >
                     Premium Quality
@@ -139,7 +139,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.65, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xl sm:text-2xl md:text-3xl font-medium text-muted mb-7"
+                    className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xl sm:text-1xl md:text-2xl font-medium text-muted mb-7"
                 >
                     <span className="text-white/80">Supplying</span>
                     <span className="text-white text-left font-semibold inline-flex items-center">

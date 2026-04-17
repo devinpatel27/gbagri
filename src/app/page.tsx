@@ -22,17 +22,18 @@ export default function Home() {
             {/* Narrative Section */}
             <AboutSection />
 
-            {/* The Journey Section - NEW */}
-            <ProcessSection />
-
             {/* Flagship Products */}
             <ProductsSection />
+
+            {/* Technical Strength - NEW */}
+            <InfrastructureSection />
+
+            {/* The Journey Section - NEW */}
+            <ProcessSection />
 
             {/* Global Footprint - NEW */}
             <GlobalMapSection />
 
-            {/* Technical Strength - NEW */}
-            <InfrastructureSection />
 
             {/* Trust & Network */}
             <WhyChooseUsSection />

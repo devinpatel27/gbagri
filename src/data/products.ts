@@ -56,10 +56,10 @@ export const products = [
         name: 'Cumin Seeds',
         shortDesc: 'Aromatic and flavorful cumin seeds (Jeera) meticulously cleaned and sorted.',
         fullDesc: 'Cumin is a nutrient-rich seed packed with essential vitamins and minerals, including magnesium, iron, calcium, and phosphorous. Just one teaspoon of cumin seeds can meet your daily iron requirement. It is also a source of vitamin E, A, C, K, and B vitamins. With its high nutritional value, cumin supports digestion, boosts immunity, and is a vital ingredient in many cuisines around the world.',
-        image: '/Prodcuts/Cumin_Products_ZoomIn.jpg',
+        image: '/Prodcuts/Cumin_Products_ZoomOut.jpg',
         gallery: [
-            '/Prodcuts/Cumin_Products_ZoomIn.jpg',
-            '/Prodcuts/Cumin_Products_ZoomOut.jpg'
+            '/Prodcuts/Cumin_Products_ZoomOut.jpg',
+            '/Prodcuts/Cumin_Products_ZoomIn.jpg'
         ],
         category: 'Spices',
         tags: ['Machine Cleaned', 'High Volatile Oil'],

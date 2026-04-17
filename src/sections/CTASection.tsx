@@ -13,7 +13,7 @@ const contactItems = [
     {
         icon: Phone,
         label: 'Call Us',
-        value: 'Nirav Giniya: +91 85302 23280\nMiraj Khunt: +91 80000 39244',
+        value: 'Nirav Ghiniya: +91 85302 23280\nMiraj Khunt: +91 80000 39244',
         href: 'tel:+918530223280',
     },
     {

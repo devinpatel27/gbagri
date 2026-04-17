@@ -99,7 +99,7 @@ export default function Footer() {
                                 <Phone className="w-4 h-4 text-gold/60 mt-0.5 shrink-0" />
                                 <div className="text-sm space-y-2">
                                     <a href="tel:+918530223280" className="text-gray-400 hover:text-gold transition-colors block">
-                                        Nirav Giniya: +91 85302 23280
+                                        Nirav Ghiniya: +91 85302 23280
                                     </a>
                                     <a href="tel:+918000039244" className="text-gray-400 hover:text-gold transition-colors block border-t border-border/20 pt-1 mt-1">
                                         Miraj Khunt: +91 80000 39244
