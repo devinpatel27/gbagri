@@ -1,17 +1,18 @@
 import Navbar from '@/components/Navbar';
 import SmoothScroll from '@/components/SmoothScroll';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import Footer from '@/sections/Footer';
 import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-    title: 'GBAgri From Farms | Premium Agricultural Exports',
+    title: 'GB Agri Impex Limited | Premium Agricultural Exports',
     description:
-        'GBAgri From Farms — A trusted global agricultural exporter specializing in premium peanuts, seeds, spices, and grains. ISO certified. From India to the world.',
+        'GB Agri Impex Limited — A trusted global agricultural exporter specializing in premium peanuts, seeds, spices, and grains. ISO certified. From India to the world.',
     keywords:
         'agricultural export, peanuts, sesame seeds, cumin seeds, fennel seeds, black gram, blanched peanuts, India export, APEDA certified',
     openGraph: {
-        title: 'GBAgri From Farms | Premium Agricultural Exports',
+        title: 'GB Agri Impex Limited | Premium Agricultural Exports',
         description:
             'Premium quality agricultural exports from India to global markets. Peanuts, seeds, spices and more.',
         type: 'website',
@@ -41,6 +42,7 @@ export default function RootLayout({
                         {children}
                     </main>
                     <Footer />
+                    <WhatsAppButton />
                 </SmoothScroll>
             </body>
         </html>

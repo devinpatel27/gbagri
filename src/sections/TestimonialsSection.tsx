@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 const testimonials = [
     {
-        text: "GBAgri has been our most reliable supplier for peanuts. The grading is always perfect and shipments always arrive on schedule. Their dedication to quality is unmatched.",
+        text: "GB Agri Impex Limited has been our most reliable supplier for peanuts. The grading is always perfect and shipments always arrive on schedule. Their dedication to quality is unmatched.",
         author: "Mohammed Al-Fayed",
         company: "Gulf Foods Trading Co.",
         country: "UAE",

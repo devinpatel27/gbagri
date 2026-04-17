@@ -5,8 +5,8 @@ import ProcessSection from '@/sections/ProcessSection';
 import TeamSection from '@/sections/TeamSection';
 
 export const metadata = {
-    title: 'About Us | GB Agri From Farms',
-    description: 'Learn about GB Agri From Farms, our mission, vision, state-of-the-art infrastructure, and our dedicated team behind premium Indian agricultural exports.',
+    title: 'About Us | GB Agri Impex Limited',
+    description: 'Learn about GB Agri Impex Limited, our mission, vision, state-of-the-art infrastructure, and our dedicated team behind premium Indian agricultural exports.',
 };
 
 export default function AboutPage() {

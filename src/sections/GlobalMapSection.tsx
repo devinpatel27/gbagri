@@ -3,6 +3,7 @@
 import { FadeIn } from '@/components/animations';
 import { motion } from 'framer-motion';
 import { Globe2, MapPin, Ship } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const regions = [
     {
@@ -34,6 +35,14 @@ const stats = [
 ];
 
 export default function GlobalMapSection() {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
+
     return (
         <section className="py-24 md:py-32 relative bg-[#21231F] overflow-hidden">
             {/* Background glow */}
@@ -69,11 +78,11 @@ export default function GlobalMapSection() {
                                 Our Export Network
                             </h3>
                             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                                GBAgri From Farms has established a robust international footprint spanning four major continents. We work closely with importers, distributors, and food manufacturers to deliver quality directly from Indian farms.
+                                GB Agri Impex Limited has established a robust international footprint spanning four major continents. We work closely with importers, distributors, and food manufacturers to deliver quality directly from Indian farms.
                             </p>
 
                             {/* Key metrics */}
-                            <div className="grid grid-cols-3 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 {stats.map(({ value, label, icon: Icon }) => (
                                     <div key={label} className="text-center p-4 rounded-xl bg-surface/50 border border-border/30 hover:border-gold/30 transition-colors duration-300 group">
                                         <Icon className="w-4 h-4 text-gold/60 mx-auto mb-2 group-hover:text-gold transition-colors" />

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -22,7 +22,7 @@ export default function Footer() {
                             <div className="relative">
                                 <Image
                                     src="/LOGO.svg"
-                                    alt="GBAgri Logo"
+                                    alt="GB Agri Impex Limited Logo"
                                     width={120}
                                     height={120}
                                     className=""
@@ -37,7 +37,7 @@ export default function Footer() {
                             <div>GST: 24AAMCG5061G1ZN</div>
                         </div>
                         <div className="flex gap-3">
-                            {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+                            {[Linkedin, Instagram].map((Icon, i) => (
                                 <a
                                     key={i}
                                     href="#"
@@ -123,8 +123,8 @@ export default function Footer() {
 
                 {/* Bottom */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-muted/50 text-xs text-center md:text-left">
-                        &copy; {new Date().getFullYear()} GBAgri From Farms. All rights reserved.
+                    <p className="text-muted/50 text-xs text-center md:text-left" suppressHydrationWarning>
+                        &copy; {new Date().getFullYear()} GB Agri Impex Limited. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-xs text-muted/50">
                         <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>

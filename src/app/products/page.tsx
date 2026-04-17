@@ -2,7 +2,7 @@ import PageHero from '@/components/PageHero';
 import ProductsSection from '@/sections/ProductsSection';
 
 export const metadata = {
-    title: 'Our Products | GB Agri From Farms',
+    title: 'Our Products | GB Agri Impex Limited',
     description: 'Explore our wide range of premium agricultural exports including Peanuts, Cumin Seeds, Sesame Seeds, and Pulses, all processed to global standards.',
 };
 

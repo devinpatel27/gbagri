@@ -2,8 +2,8 @@ import PageHero from '@/components/PageHero';
 import CTASection from '@/sections/CTASection';
 
 export const metadata = {
-    title: 'Contact Us | GB Agri From Farms',
-    description: 'Get in touch with GB Agri From Farms for trade inquiries, bulk orders, and premium agricultural export partnerships.',
+    title: 'Contact Us | GB Agri Impex Limited',
+    description: 'Get in touch with GB Agri Impex Limited for trade inquiries, bulk orders, and premium agricultural export partnerships.',
 };
 
 export default function ContactPage() {

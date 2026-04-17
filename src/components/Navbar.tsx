@@ -75,7 +75,7 @@ export default function Navbar() {
                                 <div className="relative w-full h-full">
                                     <Image
                                         src="/LOGO.svg"
-                                        alt="GBAgri Logo"
+                                        alt="GB Agri Impex Limited Logo"
                                         fill
                                         className="object-contain group-hover:scale-110 transition-transform duration-700 ease-out"
                                         priority

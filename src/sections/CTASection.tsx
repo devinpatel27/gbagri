@@ -62,7 +62,7 @@ export default function CTASection() {
                         {/* Map Integration */}
                         <div className="mb-12 rounded-2xl overflow-hidden border border-border/40 h-[300px] relative">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14781.93315264878!2d70.62770515!3d21.7518428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39581765c9b74071%3A0x892e2b3c4d5e6f7a!2sNavi%20Sankli%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1713291234567!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3707.3655937092226!2d70.55915197527497!3d21.688522680131072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDQxJzE4LjciTiA3MMKwMzMnNDIuMiJF!5e0!3m2!1sen!2sin!4v1776406923129!5m2!1sen!2sin"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}

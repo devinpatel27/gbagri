@@ -18,6 +18,11 @@ export default function HeroSection() {
     const [currentWord, setCurrentWord] = useState(0);
     const [displayed, setDisplayed] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     useEffect(() => {
         const word = words[currentWord];
@@ -107,17 +112,29 @@ export default function HeroSection() {
             </div>
 
             {/* Main Content */}
-            <div className="relative z-20 text-center px-6 md:px-10 max-w-6xl mx-auto pt-24 pb-16">
+            <div className="relative z-20 text-center px-6 md:px-10 max-w-6xl mx-auto pt-32 sm:pt-36 md:pt-40 pb-16">
                 {/* Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/8 mb-8 backdrop-blur-sm"
+                    className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-gold/30 bg-gold/8 mb-8 backdrop-blur-sm"
                 >
-                    <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                    <span className="text-gold text-sm font-medium tracking-wide">
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gold animate-pulse shrink-0" />
+                    <span className="text-gold text-[11px] sm:text-sm font-medium tracking-wide">
                         Trusted Agricultural Exporter — Since 2015
+                    </span>
+                </motion.div>
+
+                {/* Welcome Message */}
+                <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    className="mb-4"
+                >
+                    <span className="text-gold font-bold tracking-[0.25em] uppercase text-xs sm:text-sm">
+                        Welcome to GB Agri Impex Limited
                     </span>
                 </motion.div>
 
@@ -126,7 +143,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 35 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.85, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold leading-[1.04] mb-7 text-white"
+                    className="text-4xl sm:text-6xl md:text-6xl lg:text-7xl font-bold leading-[1.04] mb-7 text-white"
                     style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
                 >
                     Premium Quality
@@ -139,11 +156,11 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.65, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xl sm:text-1xl md:text-2xl font-medium text-muted mb-7"
+                    className="flex flex-wrap items-center justify-center gap-x-1 sm:gap-x-3 gap-y-2 text-xl sm:text-2xl font-medium text-muted mb-7"
                 >
                     <span className="text-white/80">Supplying</span>
                     <span className="text-white text-left font-semibold inline-flex items-center">
-                        {displayed}
+                        {mounted ? displayed : ''}
                         <span className="inline-block w-0.5 h-6 sm:h-7 bg-gold ml-1 animate-pulse" />
                     </span>
                     <span className="text-white/80">to the World</span>

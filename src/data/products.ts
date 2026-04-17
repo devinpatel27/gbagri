@@ -22,7 +22,7 @@ export const products = [
             { label: 'Counts per Ounce', value: '38/42, 40/50, 50/60, 60/70' },
             { label: 'Moisture', value: '7% Max' },
             { label: 'Admixture', value: '1% Max' },
-            { label: 'Aflatoxin', value: '< 5 PPB (As per EU Standards)' }
+            { label: 'Aflatoxin', value: '< 4 PPB (As per EU Standards)' }
         ]
     },
     {
@@ -46,7 +46,7 @@ export const products = [
         specifications: [
             { label: 'Origin', value: 'Gujarat, India' },
             { label: 'Style', value: 'Blanched, Split' },
-            { label: 'Moisture', value: '5% Max' },
+            { label: 'Moisture', value: '2% Max' },
             { label: 'Imperfect Size', value: 'Max 3%' },
             { label: 'Aflatoxin', value: '< 5 PPB' }
         ]
@@ -108,10 +108,10 @@ export const products = [
         name: 'Sesame Seeds',
         shortDesc: 'Hulled and natural sesame seeds with high purity and outstanding nutritional value.',
         fullDesc: 'Sesame seeds are a powerhouse of antioxidants and nutrients that support heart health, reduce cholesterol, and provide liver and kidney protection. Their anti-inflammatory and anti-tumor properties offer significant health benefits. A daily intake of ½ to 1 tablespoon of roasted sesame seeds can aid digestion and relieve constipation. Additionally, sesame seeds are a perfect complement to salads and various dishes.',
-        image: '/Prodcuts/Product_Full_Main.jpg',
+        image: '/Prodcuts/Products_ZoomOut_1.jpg',
         gallery: [
-            '/Prodcuts/Product_Full_Main.jpg',
-            '/Prodcuts/Products_ZoomOut_1.jpg'
+            '/Prodcuts/Products_ZoomOut_1.jpg',
+            '/Prodcuts/Product_Full_Main.jpg'
         ],
         category: 'Oil Seeds',
         tags: ['99.9% Purity', 'Rich in Calcium'],
